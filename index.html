@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>Fog Overlay Demo</title>
+<link rel="stylesheet" href="fog-overlay.css">
+<style>
+/* базовая стилизация примера для наглядности */
+.quiz-option {
+display: inline-block;
+margin: 8px;
+padding: 12px 16px;
+border-radius: 8px;
+background: #e0e0e0;
+cursor: pointer;
+user-select: none;
+}
+.quiz-option.incorrect-option {
+background: #ff9d9d;
+}
+</style>
+</head>
+<body>
+<h2>Пример: нажмите неправильно ответ и увидите туман</h2>
+<div class="quiz">
+<div class="quiz-option incorrect-option" data-status="incorrect">Неправильный ответ 1</div>
+<div class="quiz-option" data-status="correct">Правильный ответ</div>
+<div class="quiz-option incorrect-option" data-status="incorrect">Неправильный ответ 2</div>
+</div>
+
+<script src="fog-overlay.js"></script>
+</body>
+</html>

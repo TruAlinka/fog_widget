@@ -1,0 +1,22 @@
+/* fog-overlay.css /
+:root {
+--fog-overlay-alpha: 0.92;      / непрозрачность тумана /
+--fog-blur: 0.8px;              / степень размытия тумана /
+--fog-color-1: rgba(255, 255, 255, 0.85);  / цветовая карта тумана (первый слой) /
+--fog-color-2: rgba(200, 210, 255, 0.55);  / цветовая карта тумана (второй слой) /
+}
+.fog-overlay {
+position: fixed;
+top: 0; left: 0;
+width: 100%; height: 100%;
+pointer-events: none; / не мешает кликам, если вдругOverlay поверх того не нужен /
+z-index: 9999;
+opacity: 0;
+transition: opacity 0.5s ease;
+/ фоновый туман: два слоя градиентов */
+background: radial-gradient(circle at 20% 20%, var(--fog-color-1) 0 18%, rgba(255,255,255,0) 40%),
+radial-gradient(circle at 70% 60%, var(--fog-color-2) 0 22%, rgba(255,255,255,0) 40%);
+filter: blur(var(--fog-blur));
+will-change: opacity;
+}
+.fog-overlay.visible { opacity: var(--fog-overlay-alpha); }
